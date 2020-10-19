@@ -1,10 +1,8 @@
 const options = require("./config")
 const Queue = require('bee-queue');
 
-
 const cookQueue = new Queue('cook', options);
 const serveQueue = new Queue('serve', options);
-
 
 const placeOrder = (order) => {
     return cookQueue.createJob(order).save(); // task publisher
